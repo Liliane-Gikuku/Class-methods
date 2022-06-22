@@ -109,10 +109,11 @@ class Account:
             return "invalid amount"
         if amount>=self.balance:
             return f"Dear customer you have insuficient funds to make a transfer"
-        if isinstance(new_account,Account):
+       else:
             self.balance-=amount
-            new_account.balance+=amount
-            return f"Dear customer, you have sent {amount}Frw to {new_account} with the name {new_account.name}.your new balance is {self.balance}Frw.Thank you."
+            self.instance+=amount
+            return f"Dear customer, you have sent {amount} to account {new_account}.your new balance is {self.balance}Frw.Thank you."
+
 
 
 
